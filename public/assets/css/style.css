@@ -1,0 +1,578 @@
+body {
+  font-family: Inconsolata, monospace;
+  color: #0d1e2d;
+}
+a {
+  color: #777;
+  text-decoration: none;
+}
+a:hover {
+  color: #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Serif Bengali", serif;
+}
+.section {
+  padding: 7rem 0;
+}
+.filters a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  font-family: "Noto Serif Bengali", serif;
+}
+.filters a:active,
+.filters a:focus,
+.filters a:hover {
+  text-decoration: none;
+}
+.filters a:hover:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+}
+.filters a.active {
+  color: #000;
+}
+.filters a.active:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+}
+.item {
+  border: none;
+  margin-bottom: 30px;
+}
+.item .item-wrap {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.item .item-wrap:after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 25%);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s all ease-in-out;
+}
+.item .item-wrap img {
+  transition: 0.3s transform ease;
+  transform: scale(1);
+}
+.item .item-wrap > .work-info {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  transform: translateY(-50%);
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 20px;
+  transition: 0.3s all ease;
+}
+.item .item-wrap > .work-info h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.item .item-wrap > .work-info span {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+.item .item-wrap:hover {
+  text-decoration: none;
+}
+.item .item-wrap:hover img {
+  transform: scale(1.05);
+}
+.item .item-wrap:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+.item .item-wrap:hover .work-info {
+  margin-top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.h3 {
+  font-size: 20px;
+}
+.h4 {
+  font-size: 16px;
+}
+.footer {
+  padding: 0 0 4rem 0;
+}
+.footer a {
+  color: #000;
+}
+.social a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  position: relative;
+  text-align: center;
+  color: #0d1e2d;
+}
+.social a span {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.social a:hover {
+  color: #000;
+}
+.clients .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+#header {
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#header .logo {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+#header .logo a {
+  color: #556270;
+}
+#header .logo img {
+  max-height: 40px;
+}
+.navbar {
+  padding: 0;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar li {
+  position: relative;
+}
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #556270;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.navbar a i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+.navbar .active,
+.navbar a:hover,
+.navbar li:hover > a {
+  color: #000;
+}
+.navbar a:hover:before {
+  content: "";
+  position: absolute;
+  left: 33px;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+}
+.navbar a.active {
+  color: #000;
+}
+.navbar a.active:before {
+  content: "";
+  position: absolute;
+  left: 33px;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+}
+.mobile-nav-toggle {
+  color: #556270;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+  }
+}
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(63, 73, 83, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+.navbar-mobile a {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #556270;
+}
+.navbar-mobile .active,
+.navbar-mobile a:hover,
+.navbar-mobile li:hover > a {
+  color: #000;
+}
+.navbar-mobile a.active:before {
+  content: "";
+  position: absolute;
+  left: 33px;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+}
+.contact .info-box {
+  color: #444;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 30px 0 32px 0;
+  border-radius: 4px;
+}
+.contact .info-box i {
+  font-size: 45px;
+  padding: 8px;
+}
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #777;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navlogo {
+  width: 50%;
+  margin-right: 2%;
+  margin-left: 10px;
+}
+
+.top-bar {
+  height: 20px;
+  /* border-bottom: 1px solid #777; */
+  margin-bottom: 3px;
+  margin-top: 2px;
+}
+
+.top-bar span {
+  font-size: 15px;
+  font-weight: 300;
+  font-family: "Noto Serif Bengali", serif;
+}
+
+.address {
+  font-family: "Noto Serif Bengali", serif;
+}
+
+.mar-top {
+  margin-top: 5.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mar-top {
+    margin-top: 3.5rem;
+  }
+  .navbar ul {
+    display: flex !important;
+  }
+  .top-bar {
+    height: 20px;
+  }
+  .top-bar {
+    height: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .mar-top {
+    margin-top: 1.5rem;
+  }
+  .navbar ul {
+    display: flex !important;
+  }
+  .top-bar span {
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .top-bar {
+    height: 20px;
+  }
+}
+@media (max-width: 425px) {
+  .mar-top {
+    margin-top: 1.5rem;
+  }
+
+  .navbar ul {
+    display: flex !important;
+  }
+  .navbar a {
+    padding: 0px 0 0px 20px;
+    font-size: 13px;
+  }
+  .top-bar span {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .top-bar {
+    height: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mar-top {
+    margin-top: 0.3rem;
+  }
+
+  .navbar ul {
+    display: flex !important;
+  }
+  .navbar a {
+    padding: 0px 0 0px 20px;
+    font-size: 13px;
+  }
+  .top-bar span {
+    font-size: 8px;
+    font-weight: 700;
+  }
+  .top-bar {
+    height: 18px;
+  }
+}
+
+@media (max-width: 390px) {
+  .top-bar span {
+    font-size: 9px;
+  }
+}
+@media (max-width: 360px) {
+  .top-bar span {
+    font-size: 8px;
+  }
+}
+@media (max-width: 314px) {
+  .top-bar span {
+    font-size: 6px;
+  }
+  .navlogo {
+    width: 60%;
+  }
+}
+@media (max-width: 280px) {
+  .top-bar span {
+    font-size: 6px;
+    font-weight: 500;
+  }
+  .navlogo {
+    width: 80%;
+  }
+}
+
+.modal-body-data {
+  margin: 1.5em 0;
+}
+
+.dataz {
+  font-family: "Noto Serif Bengali", serif;
+  font-weight: 400;
+}
+
+#orderBtn {
+  font-family: "Noto Serif Bengali", serif;
+  font-weight: 700;
+}
+
+form,
+.modalStatus,
+.invalid-feedback {
+  font-family: "Noto Serif Bengali", serif;
+}
+
+form label {
+  font-weight: 700;
+}
+form button {
+  font-weight: 700;
+}
+
+.cunter {
+  font-size: 1.4rem;
+  font-family: "Pacifico", cursive;
+}
+
+:is(input):focus {
+  box-shadow: none !important;
+  border-color: 0 !important;
+}
+
+.intro-video {
+  width: 100%;
+  object-position: center center;
+  object-fit: cover;
+  z-index: -1;
+}
+.dvidr {
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #4fbed8;
+}
+.dvidr::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1.5px;
+  background-color: #000;
+}
+
+
+
+.loading-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo{
+  width: 48px;
+  height: 48px;
+}
+
+.loading-bar{
+  width: 80%;
+  height: 2px;
+  background: #cfcfcf;
+  margin: 22px auto;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.loading-bar::before{
+  content: '';
+  width: 68px;
+  height: 2px;
+  background: #0073b1;
+  position: absolute;
+  left: -34px;
+  animation: bluebar 1.5s infinite ease;
+}
+
+@keyframes bluebar{
+  50%{
+    left: 160px;
+  }
+}
+
+.loaded {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: ease 0.7s;
+    -moz-transition: ease 0.7s;
+    -o-transition: ease 0.7s;
+    transition: ease 0.7s;
+}
