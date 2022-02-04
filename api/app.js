@@ -36,7 +36,7 @@ const googleSheets = google.sheets({ version: "v4", auth: async () => await auth
 
 app.get('/api/v1/get-contentz', async (req, res) => {
 
-    const spreadsheetId = process.env.SHEETID
+    const spreadsheetId = process.env.DB_SHEET_ID
 
     const getRows = await googleSheets.spreadsheets.values.get({
         auth,
@@ -64,7 +64,7 @@ app.post('/api/v1/client-data', async (req, res) => {
         if(!name) return res.json({nameErr: true})
         else if (!contact.match(re)) return res.json({contactErr: true})
 
-        const spreadsheetId = process.env.SHEETID
+        const spreadsheetId = process.env.LEAD_SHEET_ID
 
         // Write row(s) to spreadsheet
         googleSheets.spreadsheets.values.append({
